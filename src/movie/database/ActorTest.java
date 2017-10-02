@@ -11,7 +11,9 @@ public class ActorTest {
     public void getName() throws Exception {
         String actorName = "Tom Hanks";
         ArrayList<Movie> testMovies = new ArrayList<>();
-        Actor testActor = new Actor(actorName, testMovies);
+        Actor testActor = new Actor();
+        testActor.setName(actorName);
+        testActor.setMovies(testMovies);
         String testResult = testActor.getName();
         assertEquals(testResult, actorName);
     }
@@ -23,7 +25,9 @@ public class ActorTest {
         Movie testMovie = new Movie("", new ArrayList<Actor>());
         ArrayList <Movie> testMovies = new ArrayList<>();
         testMovies.add(testMovie);
-        Actor testActor = new Actor(actorName, testMovies);
+        Actor testActor = new Actor();
+        testActor.setName(actorName);
+        testActor.setMovies(testMovies);
         ArrayList<Movie> resultTest = testActor.getMovies();
         assertEquals(resultTest, testMovies);
     }

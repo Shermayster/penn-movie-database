@@ -42,8 +42,14 @@ public class MovieDatabaseTest {
         ArrayList<Actor> newActors = new ArrayList<>();
         Movie newMovie = new Movie(moveName, newActors);
         testMoves.add(newMovie);
-        newActors.add(new Actor("Brad Pitt", testMoves));
-        newActors.add(new Actor("Dustin Hoffman", testMoves));
+        Actor newActor1 = new Actor();
+        newActor1.setName("Brad Pitt");
+        newActor1.setMovies(testMoves);
+        newActors.add(newActor1);
+        Actor newActor2 = new Actor();
+        newActor2.setName("Dustin Hoffman");
+        newActor2.setMovies(testMoves);
+        newActors.add(newActor2);
         database.addMovie("Sleepers", testActorsArr);
         ArrayList<Movie> resultList = database.getMovieList();
         assertEquals(resultList.get(0).getName(), testMoves.get(0).getName());

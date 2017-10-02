@@ -6,10 +6,7 @@ public class Actor {
     private String name;
     private ArrayList<Movie> movies;
 
-    public Actor(String actorName, ArrayList<Movie> movies) {
-        setName(actorName);
-        setMovies(movies);
-    }
+    public Actor() {}
 
     public String getName() {
         return this.name;

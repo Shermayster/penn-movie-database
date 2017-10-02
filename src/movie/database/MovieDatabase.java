@@ -79,7 +79,9 @@ public class MovieDatabase {
     private static Actor addNewActor(String actorName, Movie newMovie) {
         ArrayList<Movie> newActorMovies = new ArrayList<>();
         newActorMovies.add(newMovie);
-        Actor newActor = new Actor(actorName, newActorMovies);
+        Actor newActor = new Actor();
+        newActor.setName(actorName);
+        newActor.setMovies(newActorMovies);
         return newActor;
     }
 
@@ -151,7 +153,9 @@ public class MovieDatabase {
                 String[] actorArray = actorString.split(", "); // create array of string
                 String actorName = actorArray[0]; // get Name of Actor
                 ArrayList<Movie> actorMovieList = new ArrayList<>(); // get Films of actor
-                actor = new Actor(actorName, actorMovieList); // create new Actor
+                actor = new Actor(); // create new Actor
+                actor.setName(actorName);
+                actor.setMovies(actorMovieList);
                 actorList.add(actor); // add actor to actor list
                 String[] actorsFilms = Arrays.copyOfRange(actorArray, 1, actorArray.length); // create list of
                 for (int i = 0; i < actorsFilms.length; i++) {
